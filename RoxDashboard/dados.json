@@ -1,0 +1,72 @@
+{
+  "cliente": {
+    "nome": "Dra. Ana Cristina",
+    "empresa": "Acer Geriatria",
+    "logo": null
+  },
+  "periodo": {
+    "inicio": "01/06/2026",
+    "fim": "30/06/2026",
+    "label": "Junho 2026"
+  },
+  "saude": "Estável",
+  "mes_anterior": {
+    "faturamento_total": 21400.00,
+    "cac": 611.00,
+    "taxa_conversao_sql_venda": 0.483,
+    "roi_direto": 3.75,
+    "vendas": 7
+  },
+  "investimento": {
+    "total": 4500.00,
+    "ads": 3200.00,
+    "operacional": 1300.00
+  },
+  "funil": {
+    "leads_total": 148,
+    "mql": 62,
+    "sql": 28,
+    "oportunidades": 15,
+    "vendas": 8
+  },
+  "financeiro": {
+    "faturamento_total": 24000.00,
+    "ticket_medio": 3000.00,
+    "margem_contribuicao": 0.65,
+    "lifetime_meses": 8
+  },
+  "canais": {
+    "google": {
+      "investimento": 1800.00,
+      "leads": 52,
+      "cadastros_lp": 48,
+      "ligacoes": 12
+    },
+    "meta": {
+      "investimento": 1400.00,
+      "leads": 78,
+      "cadastros_lp": 70
+    },
+    "whatsapp": {
+      "mensagens_iniciadas": 320,
+      "investimento": 180.00,
+      "leads_organicos": 18
+    }
+  },
+  "agente": {
+    "nome": "Agente Concierge v2",
+    "taxa_resposta": 0.82,
+    "tempo_medio_resposta_seg": 4.2,
+    "mensagens_enviadas": 412,
+    "mensagens_respondidas": 338
+  },
+  "benchmarks": {
+    "cpl_maximo": 100,
+    "cac_maximo": 800,
+    "taxa_mql_minima": 0.30,
+    "taxa_sql_minima": 0.40,
+    "taxa_conversao_minima": 0.15,
+    "ltv_cac_minimo": 3
+  },
+  "meta_proposta": 30000.00
+}

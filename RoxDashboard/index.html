@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROX Dashboard — Relatório de Performance</title>
+  <meta name="description" content="Dashboard de metrificação e ROI da ROX — AI & Automation">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="assets/logo.png" alt="ROX — AI & Automation">
+      </div>
+      <div class="header-info" style="display: flex; align-items: center; gap: 15px;">
+        <div style="text-align: right;">
+          <span class="header-client" id="clientName">—</span><br>
+          <span class="header-period" id="periodLabel">—</span>
+        </div>
+        <button id="btnEdit" class="btn-primary" style="padding: 8px 16px; border-radius: 8px; background: rgba(0,210,255,0.15); color: #00D2FF; border: 1px solid #00D2FF; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 0.8rem; transition: 0.3s;">⚙️ Editar JSON</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== EDIT MODAL ===== -->
+  <dialog id="editModal" class="edit-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Painel do Administrador (Editar JSON)</h2>
+        <button id="btnCloseModal" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modalFormContainer">
+        <!-- JS injeta os campos aqui -->
+      </div>
+      <div class="modal-footer">
+        <button id="btnExportJson" class="btn-primary" style="background: #00D2FF; color: #020813; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700;">💾 Baixar arquivo .json</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main">
+
+    <!-- Title + Health Badge -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl); flex-wrap: wrap; gap: var(--space-sm);">
+      <h1 style="font-size: 1.4rem; font-weight: 700;">Relatório de Performance</h1>
+      <div id="healthBadge"></div>
+    </div>
+
+    <!-- Meta Progress -->
+    <section class="meta-progress-section">
+      <div class="meta-progress-card">
+        <div class="meta-progress-header">
+          <span class="meta-progress-label">Progresso da Meta de Faturamento</span>
+          <span class="meta-progress-value" id="metaValues">—</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="meta-progress-percentage" id="metaPercentage">0%</div>
+      </div>
+    </section>
+
+    <!-- ===== DIAGNÓSTICO (NEW) ===== -->
+    <div class="section-title">Diagnóstico do Mês</div>
+    <section class="diagnostic-section" id="diagnosticSection">
+      <!-- Injected by JS -->
+    </section>
+
+    <!-- Metrics Cards -->
+    <div class="section-title">Indicadores Principais</div>
+    <div class="metrics-grid" id="metricsGrid"></div>
+
+    <!-- ===== AGENT PERFORMANCE (NEW) ===== -->
+    <div class="section-title">Performance do Agente de IA</div>
+    <div class="metrics-grid" id="agentGrid"></div>
+
+    <!-- Charts -->
+    <div class="section-title">Análise Visual</div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-title">Funil de Conversão</div>
+        <div class="chart-container">
+          <canvas id="funnelChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Distribuição de Leads por Canal</div>
+        <div class="chart-container">
+          <canvas id="channelChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROI Section -->
+    <div class="section-title">Retorno sobre Investimento</div>
+    <section class="roi-section">
+      <div class="roi-grid" id="roiGrid"></div>
+    </section>
+
+    <!-- ===== BENCHMARKS COMPARISON (NEW) ===== -->
+    <div class="section-title">Comparativo com Benchmarks do Nicho</div>
+    <section class="table-section">
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>Resultado Atual</th>
+              <th>Benchmark Ideal</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="benchmarkTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Channels Table -->
+    <div class="section-title">Detalhamento por Canal</div>
+    <section class="table-section">
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Canal</th>
+              <th>Investimento</th>
+              <th>Leads</th>
+              <th>CPL</th>
+              <th>% do Total</th>
+            </tr>
+          </thead>
+          <tbody id="channelTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Conversion Rates -->
+    <div class="section-title">Taxas de Conversão do Funil</div>
+    <div class="metrics-grid" id="conversionGrid"></div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="ROX">
+    </div>
+    <p>Relatório gerado automaticamente pela ROX — AI & Automation</p>
+    <p id="footerDate">—</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
