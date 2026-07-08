@@ -1,0 +1,77 @@
+{
+  "cliente": {
+    "nome": "Dra. Ana Cristina",
+    "empresa": "Acer Geriatria",
+    "logo": null
+  },
+  "periodo": {
+    "inicio": "01/06/2026",
+    "fim": "30/06/2026",
+    "label": "Junho 2026"
+  },
+  "saude": "Estável",
+  "mes_anterior": {
+    "faturamento_total": 21400.00,
+    "cac": 611.00,
+    "taxa_conversao_sql_venda": 0.483,
+    "roi_direto": 3.75,
+    "vendas": 7
+  },
+  "investimento": {
+    "total": 4500.00,
+    "ads": 3200.00,
+    "operacional": 1300.00
+  },
+  "funil": {
+    "leads_total": 148,
+    "mql": 62,
+    "sql": 28,
+    "oportunidades": 15,
+    "vendas": 8
+  },
+  "financeiro": {
+    "faturamento_total": 24000.00,
+    "ticket_medio": 3000.00,
+    "margem_contribuicao": 0.65,
+    "lifetime_meses": 8
+  },
+  "canais_leads": {
+    "Google Ads": {
+      "leads": 52,
+      "investimento": 1800.00
+    },
+    "Meta Ads": {
+      "leads": 78,
+      "investimento": 1400.00
+    },
+    "WhatsApp Orgânico": {
+      "leads": 18,
+      "investimento": 180.00
+    },
+    "Indicação": {
+      "leads": 12,
+      "investimento": 0.00
+    },
+    "TikTok": {
+      "leads": 8,
+      "investimento": 120.00
+    }
+  },
+  "performance_automacao": {
+    "mensagens_processadas": 412,
+    "taxa_resposta": 0.82,
+    "tempo_medio_resposta_seg": 4.2,
+    "agendamentos_realizados": 24,
+    "follow_ups_disparados": 89,
+    "transbordo_humano": 15
+  },
+  "benchmarks": {
+    "cpl_maximo": 100,
+    "cac_maximo": 800,
+    "taxa_mql_minima": 0.30,
+    "taxa_sql_minima": 0.40,
+    "taxa_conversao_minima": 0.15,
+    "ltv_cac_minimo": 3
+  },
+  "meta_proposta": 30000.00
+}
