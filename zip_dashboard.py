@@ -38,9 +38,15 @@ def create_zip():
                         print(f'  + {arcname}')
 
     size_kb = os.path.getsize(OUTPUT_ZIP) / 1024
-    print(f'\n[OK] ZIP criado com sucesso: {OUTPUT_ZIP}')
+    try:
+        print(f'\n[OK] ZIP criado com sucesso: {OUTPUT_ZIP}')
+    except UnicodeEncodeError:
+        print(f'\n[OK] ZIP criado com sucesso (caminho possui caracteres especiais).')
     print(f'     Tamanho: {size_kb:.1f} KB')
-    print(f'\n[DEPLOY] Arraste o arquivo "{os.path.basename(OUTPUT_ZIP)}" para o EasyPanel!')
+    try:
+        print(f'\n[DEPLOY] Arraste o arquivo "{os.path.basename(OUTPUT_ZIP)}" para o EasyPanel!')
+    except UnicodeEncodeError:
+        print(f'\n[DEPLOY] Arraste o arquivo ZIP criado para o EasyPanel!')
 
 if __name__ == '__main__':
     print('ROX Dashboard -- Criando pacote para deploy...\n')
